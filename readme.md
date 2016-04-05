@@ -19,6 +19,10 @@ The ORM models are exposed using a very simple express based REST API.
 
 `curl http://localhost:3000/team?name=Leicester City`
 
+#### Gets the stadium that the team plays at
+
+`curl http://localhost:3000/team/3/stadium`
+
 #### Create a team
 
 `curl -d "name=Arsenal" http://localhost:3000/team`

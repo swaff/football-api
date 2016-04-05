@@ -57,4 +57,19 @@ module.exports = function (app) {
                    }
                });
            });
+
+       app.route('/team/:id/stadium')
+           .get(function (req, res) {
+
+               db.Team.findById(req.params.id).then(function (team) {
+
+                   if (team) {
+                       team.getStadium().then(function (stadium) {
+                           res.json(stadium);
+                       });
+                   } else {
+                       res.status(404).send();
+                   }
+               });
+           });
 };

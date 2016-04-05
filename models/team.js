@@ -4,14 +4,14 @@ module.exports = function(sequelize, DataTypes) {
         name: DataTypes.STRING,
         stadiumId: {
             type: DataTypes.INTEGER,
-            references: 'Stadia',
+            references: 'Stadium',
             key: 'id'
         }
     }, {
         classMethods: {
             associate: function(models) {
                 Team.hasMany(models.Player, { foreignKey: 'teamId' });
-                Team.hasOne(models.Stadium, { foreignKey: 'stadiumId' });
+                Team.belongsTo(models.Stadium, { foreignKey: 'stadiumId' });
             }
         }
     });
