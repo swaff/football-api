@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "seq-user",
+    "password": "seq-user",
+    "database": "football",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  }
+}
