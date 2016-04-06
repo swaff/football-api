@@ -7,6 +7,11 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.INTEGER,
         references: 'Team',
         key: 'id'
+    },
+    transferValue: {
+        type: DataTypes.REAL,
+        defaultValue: 0,
+        allowNull: false
     }
   }, {
     classMethods: {

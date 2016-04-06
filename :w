@@ -1,0 +1,29 @@
+'use strict';
+var model = require('../models').Stadium;
+
+var stadia;
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+      console.log('up');
+      return queryInterface.select(model, 'Stadia', {
+        schema: "public",
+        attributes: ['id', 'name']
+      }).then(function (data) {
+          stadia = data.map(function (stadiumData) {
+              return stadiumData.dataValues;
+          });
+          console.log('stadia', stadia);
+      });
+  },
+
+  down: function (queryInterface, Sequelize) {
+    /*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.bulkDelete('Person', null, {});
+    */
+  }
+};
